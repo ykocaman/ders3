@@ -1,15 +1,12 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
 
-<h2>Uyelik Formu 2</h2>
 
-
-<div class="panel panel-danger">
+<div class="panel panel-default">
     <div class="panel-heading">Giriş Yapın</div>
     <div class="panel-body">
-        @if (ViewBag.GirisBasarisiz)
+        @if (ViewBag.GirisBasarisiz == true)
         {
             <div class="alert alert-danger" role="alert">
                 <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
@@ -18,13 +15,16 @@
             </div>
         }
 
-        <form class="form-group" method="post">
-            <label for="username">Kullanıcı Adı</label>
-            <input class="form-control" name="username" placeholder="Kullanıcı adı" value="@Request.Form["username"]"/> 
-            <label for="password">Parola</label>
-            <input class="form-control" name="password" type="password"/>
-            <br />
-            <input type="submit" value="gönder" class="form-control btn-primary" />
+        <form class="form-horizontal" method="post">
+            <div class="form-group">
+                <label for="username" class="col-sm-2 control-label">Kullanıcı Adı :</label>
+                <input class="form-control" name="username" placeholder="Kullanıcı adı" value="@Request.Form["username"]" />
+            </div>
+            <div class="form-group">
+                <label for="username" class="col-sm-2 control-label">Parola :</label>
+                <input class="form-control" name="password" type="password" placeholder="Parola" />
+            </div>
+            <button class="btn btn-success col-sm-offset-2">Giriş Yap</button>
         </form>
     </div>
 </div>
